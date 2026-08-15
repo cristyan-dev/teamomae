@@ -1,0 +1,671 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #ffe5ef, transparent 35%),
+        radial-gradient(circle at bottom right, #ffd9e8, transparent 35%),
+        linear-gradient(135deg, #fff7fa, #ffeef4);
+
+    color: #633c4d;
+
+    overflow-x: hidden;
+}
+
+
+
+
+.tela {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.tela.ativa {
+    display: flex;
+
+    animation: aparecer 0.7s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+.card {
+    width: min(650px, 95vw);
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 25px 70px rgba(163, 86, 117, 0.15);
+}
+
+
+
+
+.inicial {
+    padding: 60px 35px;
+}
+
+.flor {
+    font-size: 65px;
+
+    margin-bottom: 15px;
+
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+.pequeno {
+    font-size: 15px;
+
+    color: #a56a80;
+
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: clamp(38px, 7vw, 65px);
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+h1 span {
+    display: block;
+
+    font-family: "Pacifico", cursive;
+
+    color: #d75b87;
+
+    font-weight: 400;
+}
+
+.idade {
+    font-size: 27px;
+
+    font-weight: 600;
+
+    color: #a64c70;
+
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    color: #8f6575;
+
+    margin-bottom: 30px;
+}
+
+
+
+
+.botao {
+    border: none;
+
+    background: white;
+
+    color: #7c4058;
+
+    border-radius: 18px;
+
+    padding: 18px 25px;
+
+    font-size: 16px;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 25px rgba(160, 75, 108, 0.12);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s,
+        background 0.25s;
+}
+
+.botao:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 30px rgba(160, 75, 108, 0.18);
+}
+
+.botao:active {
+    transform: scale(0.96);
+}
+
+.botao.principal {
+    background: #d95d89;
+
+    color: white;
+
+    padding: 17px 32px;
+
+    font-weight: 600;
+}
+
+
+
+
+.container {
+    width: min(850px, 95vw);
+
+    text-align: center;
+}
+
+.titulo span {
+    font-size: 45px;
+}
+
+.titulo h2 {
+    font-family: "Pacifico", cursive;
+
+    font-size: 38px;
+
+    font-weight: 400;
+
+    color: #bd4e78;
+
+    margin: 10px 0;
+}
+
+.titulo p {
+    color: #8f6575;
+
+    margin-bottom: 35px;
+}
+
+.botoes {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.botoes .botao {
+    min-height: 120px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 30px;
+}
+
+.botoes .botao span {
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+
+.icone {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-family: "Pacifico", cursive;
+
+    font-size: 35px;
+
+    color: #bd4e78;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+.texto {
+    text-align: left;
+
+    line-height: 1.8;
+
+    color: #765464;
+}
+
+.texto p {
+    margin-bottom: 18px;
+}
+
+.assinatura {
+    text-align: center;
+
+    font-weight: 600;
+
+    color: #c74f7a;
+
+    font-size: 20px;
+}
+
+
+
+
+.motivo-texto {
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    color: #795466;
+
+    margin-bottom: 25px;
+
+    padding: 10px;
+}
+
+
+
+
+.fotos {
+    width: min(900px, 95vw);
+}
+
+.galeria {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.foto {
+    aspect-ratio: 1;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #f8dbe5;
+
+    box-shadow:
+        0 10px 25px rgba(155, 75, 105, 0.15);
+}
+
+.foto img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s;
+}
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+
+
+
+.presente {
+    font-size: 70px;
+
+    margin-bottom: 10px;
+}
+
+.presenteBotao {
+    border: none;
+
+    background: transparent;
+
+    font-size: 90px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s;
+
+    animation: presente 1.8s infinite;
+}
+
+.presenteBotao:hover {
+    transform: scale(1.15) rotate(5deg);
+}
+
+@keyframes presente {
+    0%, 100% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg) scale(1.05);
+    }
+}
+
+.mensagem-final {
+    display: none;
+
+    margin-top: 25px;
+
+    animation: aparecer 1s ease;
+}
+
+.mensagem-final.visivel {
+    display: block;
+}
+
+.mensagem-final p {
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+.mensagem-final .grande {
+    font-family: "Pacifico", cursive;
+
+    font-size: 30px;
+
+    color: #d45582;
+}
+
+
+
+
+.voltar {
+    display: block;
+
+    margin: 30px auto 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #a35b77;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.background-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+
+    bottom: -50px;
+
+    opacity: 0.5;
+
+    animation: subir linear forwards;
+}
+
+@keyframes subir {
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+    }
+}
+
+
+
+.confete {
+    position: fixed;
+
+    top: -20px;
+
+    width: 10px;
+    height: 16px;
+
+    z-index: 100;
+
+    animation: cair 3s linear forwards;
+}
+
+@keyframes cair {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+
+
+@media (max-width: 650px) {
+
+    .tela {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 35px 22px;
+
+        border-radius: 25px;
+    }
+
+    .botoes {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .foto {
+        aspect-ratio: 4 / 3;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .titulo h2 {
+        font-size: 30px;
+    }
+}
+
+
+
+.tema-btn {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    z-index: 999;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s,
+        background 0.3s;
+}
+
+.tema-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+body.escuro {
+
+    background:
+        radial-gradient(circle at top left, #3b2632, transparent 35%),
+        radial-gradient(circle at bottom right, #241b25, transparent 35%),
+        linear-gradient(135deg, #18151a, #241b22);
+
+    color: #f4dce5;
+}
+
+
+
+
+body.escuro .card {
+
+    background: rgba(40, 30, 37, 0.85);
+
+    border-color: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+
+
+body.escuro .pequeno,
+body.escuro .subtitulo,
+body.escuro .titulo p,
+body.escuro .texto,
+body.escuro .motivo-texto,
+body.escuro .fotos > p,
+body.escuro .mensagem-final p {
+
+    color: #d9bdc9;
+}
+
+
+
+
+body.escuro h1 span,
+body.escuro .titulo h2,
+body.escuro .card h2 {
+
+    color: #f080a8;
+}
+
+
+
+
+body.escuro .botao:not(.principal) {
+
+    background: #33252e;
+
+    color: #f1cfdd;
+}
+
+body.escuro .tema-btn {
+
+    background: #33252e;
+
+    color: #ffe6ef;
+}
+
+
+
+body.escuro .botao.principal {
+
+    background: #d45d89;
+
+    color: white;
+}
+
+
+
+
+body.escuro .voltar {
+
+    color: #e99ab8;
+}
+
+
+
+
+body.escuro .foto {
+
+    background: #33252e;
+}

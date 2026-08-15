@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz Aniversário, maezinha ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   
+
+    <button id="temaBtn" class="tema-btn" onclick="alternarTema()">
+        🌙
+    </button>
+
+
+    
+
+    <div class="background-hearts"></div>
+
+
+   
+
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+
+    <section id="inicio" class="tela ativa">
+
+        <div class="card inicial">
+
+            <div class="flor">
+                🌷
+            </div>
+
+            <p class="pequeno">
+                Uma pequena surpresa para você mãe linda...
+            </p>
+
+            <h1>
+                Feliz Aniversário,
+                <span>Mamãe!</span>
+            </h1>
+
+            <p class="idade">
+                40 anos ❤️
+            </p>
+
+            <p class="subtitulo">
+                Preparei uma coisinha especial para você.
+            </p>
+
+            <button
+                class="botao principal"
+                onclick="comecar()">
+
+                Clique para abrir 💌
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+ 
+
+    <section id="menu" class="tela">
+
+        <div class="container">
+
+            <div class="titulo">
+
+                <span>
+                    🌸
+                </span>
+
+                <h2>
+                    Uma surpresa para você
+                </h2>
+
+                <p>
+                    Clique nos botões e descubra cada pedacinho
+                    dessa homenagem.
+                </p>
+
+            </div>
+
+
+            <div class="botoes">
+
+                <button
+                    class="botao"
+                    onclick="abrirMensagem()">
+
+                    💌
+
+                    <span>
+                        Uma mensagem para você
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="botao"
+                    onclick="abrirMotivos()">
+
+                    ❤️
+
+                    <span>
+                        Por que você é especial?
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="botao"
+                    onclick="abrirFotos()">
+
+                    📸
+
+                    <span>
+                        Algumas lembranças
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="botao"
+                    onclick="abrirSurpresa()">
+
+                    🎁
+
+                    <span>
+                        Tem mais uma surpresa...
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="mensagem" class="tela">
+
+        <div class="card carta">
+
+            <div class="icone">
+                💌
+            </div>
+
+            <h2>
+                Para você, Amanda
+            </h2>
+
+
+            <div class="texto">
+
+                <p>
+                    Hoje é um dia muito especial, porque há 40 anos
+                    nasceu uma pessoa que faria a diferença na vida
+                    de tantas pessoas, inclusive na minha.
+                </p>
+
+                <p>
+                    Quero que você saiba o quanto é importante,
+                    especial e querida.
+                </p>
+
+                <p>
+                    Espero que essa nova fase da sua vida seja cheia
+                    de momentos felizes, sonhos realizados, risadas,
+                    amor e muitas coisas boas.
+                </p>
+
+                <p>
+                    Que nunca faltem motivos para sorrir e pessoas
+                    para lembrar o quanto você é amada.
+                </p>
+
+                <p class="assinatura">
+                    Feliz 40 anos, Amanda! ❤️
+                </p>
+
+            </div>
+
+
+            <button
+                class="voltar"
+                onclick="voltarMenu()">
+
+                ← Voltar
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section id="motivos" class="tela">
+
+        <div class="card motivos">
+
+            <div class="icone">
+                ❤️
+            </div>
+
+            <h2>
+                Você é especial porque...
+            </h2>
+
+
+            <p
+                id="motivoTexto"
+                class="motivo-texto">
+
+                Clique no botão para descobrir ❤️
+
+            </p>
+
+
+            <button
+                class="botao principal"
+                onclick="proximoMotivo()">
+
+                Descobrir ✨
+
+            </button>
+
+
+            <button
+                class="voltar"
+                onclick="voltarMenu()">
+
+                ← Voltar
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section id="fotos" class="tela">
+
+        <div class="card fotos">
+
+            <div class="icone">
+                📸
+            </div>
+
+            <h2>
+                Algumas lembranças
+            </h2>
+
+            <p>
+                Algumas memórias especiais para guardar para sempre.
+            </p>
+
+
+            <div class="galeria">
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/foto1.jpg"
+                        alt="Lembrança 1">
+
+                </div>
+
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/foto2.jpg"
+                        alt="Lembrança 2">
+
+                </div>
+
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/foto3.jpg"
+                        alt="Lembrança 3">
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="voltar"
+                onclick="voltarMenu()">
+
+                ← Voltar
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="surpresa" class="tela">
+
+        <div class="card final">
+
+            <div
+                class="presente"
+                id="presente">
+
+                🎁
+
+            </div>
+
+
+            <h2>
+                Uma última surpresa...
+            </h2>
+
+
+            <p id="surpresaTexto">
+                Clique no presente ❤️
+            </p>
+
+
+            <button
+                class="presenteBotao"
+                onclick="abrirPresente()">
+
+                🎁
+
+            </button>
+
+
+            <!-- =========================
+                 MENSAGEM FINAL
+            ========================== -->
+
+            <div
+                id="mensagemFinal"
+                class="mensagem-final">
+
+                <h2>
+                    Feliz 40 anos, Amanda! 🎂❤️
+                </h2>
+
+                <p>
+                    Que os próximos anos sejam ainda mais bonitos
+                    do que todos os que já passaram.
+                </p>
+
+                <p>
+                    Que você continue sendo essa pessoa maravilhosa,
+                    iluminando a vida de quem tem a sorte de estar
+                    ao seu lado.
+                </p>
+
+                <p class="grande">
+                    Te amo! ❤️
+                </p>
+
+            </div>
+
+
+            <button
+                class="voltar"
+                onclick="voltarMenu()">
+
+                ← Voltar
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
