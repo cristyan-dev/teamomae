@@ -1,19 +1,11 @@
 const motivos = [
-
     "Porque você consegue deixar qualquer lugar mais especial simplesmente estando nele. ❤️",
-
     "Porque seu sorriso é capaz de melhorar o dia de quem está ao seu redor. 🌷",
-
     "Porque você merece todo o carinho e amor do mundo. 💕",
-
     "Porque existem pessoas que passam pela nossa vida... e existem pessoas que fazem parte dela para sempre. Você é uma delas. ❤️",
-
     "Porque você é única e não existe ninguém igual a você. ✨",
-
     "Porque seus 40 anos são apenas o começo de uma nova fase maravilhosa. 🎂",
-
     "E principalmente... porque você é a Amanda. E isso já é motivo suficiente. ❤️"
-
 ];
 
 let motivoAtual = 0;
@@ -21,7 +13,7 @@ let motivoAtual = 0;
 
 
 
-function mostrarTela(id) {
+function mostrarTela(id, adicionarHistorico = true) {
 
     const telas = document.querySelectorAll(".tela");
 
@@ -31,12 +23,23 @@ function mostrarTela(id) {
 
     const tela = document.getElementById(id);
 
+    if (!tela) return;
+
     tela.classList.add("ativa");
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
+
+    if (adicionarHistorico) {
+        history.pushState(
+            { tela: id },
+            "",
+            "#" + id
+        );
+    }
 }
 
 
@@ -49,7 +52,6 @@ function comecar() {
     iniciarMusica();
 
     criarCoracoes();
-
 }
 
 
@@ -58,6 +60,8 @@ function comecar() {
 function iniciarMusica() {
 
     const musica = document.getElementById("musica");
+
+    if (!musica) return;
 
     musica.volume = 0.25;
 
@@ -68,7 +72,6 @@ function iniciarMusica() {
         );
 
     });
-
 }
 
 
@@ -77,7 +80,6 @@ function iniciarMusica() {
 function abrirMensagem() {
 
     mostrarTela("mensagem");
-
 }
 
 
@@ -87,23 +89,30 @@ function abrirMotivos() {
 
     motivoAtual = 0;
 
-    document.getElementById("motivoTexto").textContent =
-        "Clique no botão para descobrir ❤️";
+    const texto = document.getElementById("motivoTexto");
+
+    if (texto) {
+        texto.textContent =
+            "Clique no botão para descobrir ❤️";
+    }
 
     mostrarTela("motivos");
-
 }
 
 
 function proximoMotivo() {
 
-    const texto = document.getElementById("motivoTexto");
+    const texto =
+        document.getElementById("motivoTexto");
+
+    if (!texto) return;
 
     texto.style.opacity = "0";
 
     setTimeout(() => {
 
-        texto.textContent = motivos[motivoAtual];
+        texto.textContent =
+            motivos[motivoAtual];
 
         texto.style.opacity = "1";
 
@@ -114,7 +123,6 @@ function proximoMotivo() {
         }
 
     }, 200);
-
 }
 
 
@@ -123,7 +131,6 @@ function proximoMotivo() {
 function abrirFotos() {
 
     mostrarTela("fotos");
-
 }
 
 
@@ -131,14 +138,22 @@ function abrirFotos() {
 
 function abrirSurpresa() {
 
-    document.getElementById("mensagemFinal")
-        .classList.remove("visivel");
+    const mensagem =
+        document.getElementById("mensagemFinal");
 
-    document.getElementById("surpresaTexto")
-        .textContent = "Clique no presente ❤️";
+    const texto =
+        document.getElementById("surpresaTexto");
+
+    if (mensagem) {
+        mensagem.classList.remove("visivel");
+    }
+
+    if (texto) {
+        texto.textContent =
+            "Clique no presente ❤️";
+    }
 
     mostrarTela("surpresa");
-
 }
 
 
@@ -147,15 +162,21 @@ function abrirPresente() {
     const mensagem =
         document.getElementById("mensagemFinal");
 
-    mensagem.classList.add("visivel");
+    const texto =
+        document.getElementById("surpresaTexto");
 
-    document.getElementById("surpresaTexto")
-        .textContent = "🎉 SURPRESA! 🎉";
+    if (mensagem) {
+        mensagem.classList.add("visivel");
+    }
+
+    if (texto) {
+        texto.textContent =
+            "🎉 SURPRESA! 🎉";
+    }
 
     criarConfetes(120);
 
     criarCoracoes();
-
 }
 
 
@@ -164,8 +185,27 @@ function abrirPresente() {
 function voltarMenu() {
 
     mostrarTela("menu");
-
 }
+
+
+
+
+window.addEventListener("popstate", () => {
+
+    const estado =
+        history.state;
+
+    const telaAnterior =
+        estado && estado.tela
+            ? estado.tela
+            : "inicio";
+
+    mostrarTela(
+        telaAnterior,
+        false
+    );
+});
+
 
 
 
@@ -173,6 +213,8 @@ function criarCoracoes() {
 
     const container =
         document.querySelector(".background-hearts");
+
+    if (!container) return;
 
     for (let i = 0; i < 15; i++) {
 
@@ -201,11 +243,11 @@ function criarCoracoes() {
         container.appendChild(heart);
 
         setTimeout(() => {
+
             heart.remove();
+
         }, 15000);
-
     }
-
 }
 
 
@@ -218,7 +260,8 @@ function criarConfetes(quantidade) {
         const confete =
             document.createElement("div");
 
-        confete.className = "confete";
+        confete.className =
+            "confete";
 
         confete.style.left =
             Math.random() * 100 + "vw";
@@ -241,11 +284,11 @@ function criarConfetes(quantidade) {
         document.body.appendChild(confete);
 
         setTimeout(() => {
+
             confete.remove();
+
         }, 5000);
-
     }
-
 }
 
 
@@ -263,8 +306,8 @@ function escolherCor() {
     return cores[
         Math.floor(Math.random() * cores.length)
     ];
-
 }
+
 
 
 
@@ -276,10 +319,14 @@ setInterval(() => {
 
 
 
+
 function alternarTema() {
 
-    const body = document.body;
-    const botao = document.getElementById("temaBtn");
+    const body =
+        document.body;
+
+    const botao =
+        document.getElementById("temaBtn");
 
     body.classList.toggle("escuro");
 
@@ -288,37 +335,73 @@ function alternarTema() {
 
     if (modoEscuro) {
 
-        botao.textContent = "☀️";
+        if (botao) {
+            botao.textContent = "☀️";
+        }
 
-        localStorage.setItem("tema", "escuro");
+        localStorage.setItem(
+            "tema",
+            "escuro"
+        );
 
     } else {
 
-        botao.textContent = "🌙";
+        if (botao) {
+            botao.textContent = "🌙";
+        }
 
-        localStorage.setItem("tema", "claro");
-
+        localStorage.setItem(
+            "tema",
+            "claro"
+        );
     }
-
 }
 
 
 
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    const tema =
-        localStorage.getItem("tema");
+        const tema =
+            localStorage.getItem("tema");
 
-    const botao =
-        document.getElementById("temaBtn");
+        const botao =
+            document.getElementById("temaBtn");
 
-    if (tema === "escuro") {
+        if (tema === "escuro") {
 
-        document.body.classList.add("escuro");
+            document.body.classList.add(
+                "escuro"
+            );
 
-        botao.textContent = "☀️";
+            if (botao) {
+                botao.textContent = "☀️";
+            }
+        }
 
+        
+       
+        const telas =
+            document.querySelectorAll(".tela");
+
+        telas.forEach(tela => {
+            tela.classList.remove("ativa");
+        });
+
+        const inicio =
+            document.getElementById("inicio");
+
+        if (inicio) {
+            inicio.classList.add("ativa");
+        }
+
+        
+        history.replaceState(
+            { tela: "inicio" },
+            "",
+            "#inicio"
+        );
     }
-
-});
+);
